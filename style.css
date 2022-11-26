@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top:auto;
+    margin-bottom:auto;
+
+  }
+
+  body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  html{
+    background: radial-gradient(#64e6db, #9198e5);
+  }
+
+  .darkmodebtn {
+    position: absolute;
+    left: 10;
+    top: 25;
+    
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+
+  .digits {
+    font-size: 70px;
+  }
+  .playpause {
+    padding: 20px;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  .playpause .button {
+    width: 30px;
+    height: 30px;
+    background: black;
+    transition: inherit;
+    clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
+  }
+  
+  /* pause button */
+  .playpause.playing .button { 
+     clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
+  } 
+
+/* clock
+
+#clockContainer {
+	position: relative;
+	margin: auto;
+	height: 20vw;
+
+	width: 20vw;
+	background: url(clock.jpg) no-repeat;
+  mix-blend-mode: multiply;
+	background-size: 100%;
+}
+
+#hour,
+#minute,
+#second {
+	position: absolute;
+	background: black;
+	border-radius: 10px;
+	transform-origin: bottom;
+}
+
+#hour {
+	width: 1.8%;
+	height: 25%;
+	top: 25%;
+	left: 48.85%;
+	opacity: 0.8;
+}
+
+#minute {
+	width: 1.6%;
+	height: 30%;
+	top: 19%;
+	left: 48.9%;
+	opacity: 0.8;
+}
+
+#second {
+	width: 1%;
+	height: 40%;
+	top: 9%;
+	left: 49.25%;
+	opacity: 0.8;
+} */
