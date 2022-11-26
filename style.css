@@ -31,26 +31,7 @@
   .digits {
     font-size: 70px;
   }
-  .playpause {
-    padding: 20px;
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-  }
-
-  .playpause .button {
-    width: 30px;
-    height: 30px;
-    background: black;
-    transition: inherit;
-    clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
-  }
-  
-  /* pause button */
-  .playpause.playing .button { 
-     clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
-  } 
+/* Play/pause button */
 
 /* clock
 

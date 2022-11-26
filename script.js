@@ -45,6 +45,15 @@ playpause.addEventListener('click', () => {
   }
 });
 
+//Play/Pause button
+function change() {
+    var x = document.getElementById("test");
+    if (x.innerHTML === "Play") {
+      x.innerHTML = "Pause";
+    } else {
+      x.innerHTML = "Play";
+    }
+  }
 
 buttonReset.onclick = function() {
     window.clearInterval(Interval);
@@ -163,7 +172,7 @@ function darkmode() {
     element.classList.toggle("dark-mode");
  }
  
-
+//Play/pause
 //clock
 
 
