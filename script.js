@@ -170,9 +170,14 @@ function loadLapHistory() {
 function darkmode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
+    var contrast = document.querySelector(".darkmodebtn");
+    if (contrast.innerHTML === "Toggle dark mode") {
+        contrast.innerHTML = "Toggle light mode";
+      } else {
+        contrast.innerHTML = "Toggle dark mode";
+      }
  }
- 
-//Play/pause
+
 //clock
 
 
