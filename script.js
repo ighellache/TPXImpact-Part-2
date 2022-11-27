@@ -11,9 +11,7 @@ let appendMinutes = document.getElementById("minutes");
 let appendSeconds = document.getElementById("seconds");
 let appendCentiseconds = document.getElementById("centiseconds");
 
-//Constant variables of buttons initialized
-// const buttonStart = document.getElementById('button-start');
-// const buttonStop = document.getElementById('button-stop');
+
 const buttonReset = document.getElementById('button-reset');
 const buttonLap = document.getElementById('button-lap');
 const buttonClearLaps = document.getElementById('button-clearlap');
@@ -157,10 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadLapHistory();
 })
 
-function loadLapHistory() {
-    //use instead of DOMcontent loaded 
-    var laplist = storedlaps.split("Lap", storedlapcount+1); //using executeprogram knowledge
-    laplist.shift(); //executeprogram knowledge
+function loadLapHistory() { //using executeprogram knowledge
+    var laplist = storedlaps.split("Lap", storedlapcount+1); 
+    laplist.shift(); 
     console.log(laplist);
     laplist.forEach(lapitem =>
         document.getElementById('laps').innerHTML += `<div>
@@ -194,10 +191,7 @@ if (currentTheme) {
 	switchModeBtn.textContent = currentTheme;
 }
 
-//-------------------------------------------
-
-// var startTimerButton = document.querySelector('.startTimer');
-// var pauseTimerButton = document.querySelector('.pauseTimer');
+//----------Analog stopwatch feature---------------------------------
 var timerDisplay = document.querySelector('.timer');
 var startTime;
 var updatedTime;
@@ -210,8 +204,6 @@ function startClock(){
   if(!running){
     startTime = new Date().getTime();
     tInterval = setInterval(getShowTime, 1);
-// change 1 to 1000 above to run script every second instead of every millisecond. one other change will be needed in the getShowTime() function below for this to work. see comment there.   
- 
     paused = 0;
     running = 1;
 
@@ -248,15 +240,13 @@ function getShowTime(){
   var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-  var cseconds = Math.floor((difference % (1000 * 60)) / 10);
+  //var cseconds = Math.floor((difference % (1000 * 60)) / 10);
 
- 
 	const deg = 6;
 	const hour = document.querySelector(".hour");
 	const min = document.querySelector(".min");
 	const sec = document.querySelector(".sec");
 
-//const setClock = () => {
 	let day = new Date();
 	let hh = hours * 30;
 	let mm = minutes * deg;
