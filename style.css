@@ -144,7 +144,6 @@ body {
 	font-family: monospace;
 	text-transform: uppercase;
 	outline: none;
-	
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
 	border: 1px solid var(--main-text-color);

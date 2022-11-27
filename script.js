@@ -40,13 +40,22 @@ function change() {
       playpause.classList.toggle('playing');
       clearInterval(Interval);
       Interval = setInterval(startTimer,10);
-      setTimeout(startClock, 40); //to ensure clock runs same rate as timer
+      setTimeout(startClock, 20); //to ensure clock runs same rate as timer
     } else {
       x.innerHTML = "Play";
       clearInterval(Interval);
       pauseClock();
     }
   }
+
+// function hideshow() {
+//   var analog = document.getElementById("analog");
+//   if (analog.style.display === "none") {
+//     analog.style.display = "block";
+//   } else {
+//     analog.style.display = "none";
+//   }
+// } causes the hands to move
 
 buttonReset.onclick = function() {
     window.clearInterval(Interval);
