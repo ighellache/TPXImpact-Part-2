@@ -124,7 +124,7 @@ function lap()  {
     lapCount ++;
     //anything inside the template literal/placeholder is treated as Javascript
     //I used ternary operators to preserve the format of the time. E.g. 0:0:12:59 was previously shown
-    lapNow = `<div class="laptime" >Lap ${lapCount}: ${hours <= 9 ? "0" + hours: hours}:${minutes <= 9 ? "0" + minutes: minutes}:${seconds <= 9 ? "0" + seconds: seconds}:${centiseconds <= 9 ? "0" + centiseconds: centiseconds}</div>`;
+    lapNow = `<div class="laptime" >Lap ${lapCount <= 9 ? "0" + lapCount: lapCount}: ${hours <= 9 ? "0" + hours: hours}:${minutes <= 9 ? "0" + minutes: minutes}:${seconds <= 9 ? "0" + seconds: seconds}:${centiseconds <= 9 ? "0" + centiseconds: centiseconds}</div>`;
     laps.innerHTML += lapNow;
     //console.log(laps);
 
