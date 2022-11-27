@@ -1,80 +1,185 @@
+:root {
+	--main-bg-color: #fff;
+	--main-text-color: #888888;
+}
+
+[data-theme="dark"] {
+	--main-bg-color: #1e1f26;
+	--main-text-color: #ccc;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    margin-top:auto;
-    margin-bottom:auto;
-
-  }
-
-  body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-  }
-  html{
-    background: radial-gradient(#64e6db, #9198e5);
-  }
-
-  .darkmodebtn {
-    position: absolute;
-    left: 10;
-    top: 25;
-    
-  }
+	box-sizing: border-box;
+	/* 		transition: all ease 0.2s; */
   
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
+}
 
-  .digits {
-    font-size: 70px;
-  }
-/* Play/pause button */
-
-/* clock
-
-#clockContainer {
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+	background-color: var(--main-bg-color);
 	position: relative;
-	margin: auto;
-	height: 20vw;
-
-	width: 20vw;
-	background: url(clock.jpg) no-repeat;
-  mix-blend-mode: multiply;
-	background-size: 100%;
+	transition: all ease 0.2s;
+}
+#mytheme {
+	font-size: 2rem;
+	color: var(--main-text-color);
+	font-family: monospace;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	transition: all ease 0.2s;
 }
 
-#hour,
-#minute,
-#second {
+.page-header {
+	font-size: 2rem;
+	color: var(--main-text-color);
+	padding: 2rem 0;
+	font-family: monospace;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	transition: all ease 0.2s;
+}
+
+
+#laps {
+  font-size: 1rem;
+	color: var(--main-text-color);
+	padding: 2rem 0;
+	font-family: monospace;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	transition: all ease 0.2s;
+}
+
+#laps h1 {
+  font-size: larger;
+}
+
+.digits {
+  padding: 0rem;
+}
+.clock {
+	min-height: 18em;
+	min-width: 18em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--main-bg-color);
+	background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+	background-position: center center;
+	background-size: cover;
+	border-radius: 50%;
+	border: 4px solid var(--main-bg-color);
+	box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+		inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+		inset 0 15px 15px rgba(0, 0, 0, 0.3);
+	transition: all ease 0.2s;
+}
+.clock:before {
+	content: "";
+	height: 0.75rem;
+	width: 0.75rem;
+	background-color: var(--main-text-color);
+	border: 2px solid var(--main-bg-color);
 	position: absolute;
-	background: black;
-	border-radius: 10px;
-	transform-origin: bottom;
+	border-radius: 50%;
+	z-index: 1000;
+	transition: all ease 0.2s;
+}
+.hour,
+.min,
+.sec {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+}
+.hour {
+	height: 10em;
+	width: 10em;
+}
+.hour:before {
+	content: "";
+	position: absolute;
+	height: 50%;
+	width: 6px;
+	background-color: var(--main-text-color);
+	border-radius: 6px;
+}
+.min {
+	height: 12em;
+	width: 12em;
+}
+.min:before {
+	content: "";
+	height: 50%;
+	width: 4px;
+	background-color: var(--main-text-color);
+	border-radius: 4px;
+}
+.sec {
+	height: 13em;
+	width: 13em;
+}
+.sec:before {
+	content: "";
+	height: 60%;
+	width: 2px;
+	background-color: #f00;
+	border-radius: 2px;
 }
 
-#hour {
-	width: 1.8%;
-	height: 25%;
-	top: 25%;
-	left: 48.85%;
-	opacity: 0.8;
+/* Style for theme switch btn */
+.switch-cont {
+	margin: 2em auto;
+	/* position: absolute; */
+	bottom: 0;
+}
+.switch-cont .switch-btn {
+	font-family: monospace;
+	text-transform: uppercase;
+	outline: none;
+	padding: 0.5rem 1rem;
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+	border: 1px solid var(--main-text-color);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all ease 0.3s;
 }
 
-#minute {
-	width: 1.6%;
-	height: 30%;
-	top: 19%;
-	left: 48.9%;
-	opacity: 0.8;
-}
-
-#second {
-	width: 1%;
-	height: 40%;
-	top: 9%;
-	left: 49.25%;
-	opacity: 0.8;
-} */
+#timerContainer {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	width:700px;
+	margin:20px auto;
+	min-height: 60px;
+	border-top:0px;
+  }
+.timer, .reset {
+	float:left;
+	width: 54%;
+	padding: 20px 0;
+	font-size: 24px;
+	text-align:center;
+	color: #fff;
+	background: #A90000;
+	cursor: pointer
+  }
+  .reset {
+	background: #550000;
+	color: white;
+	width:14.9%;
+	border-left: 1px solid #990000;
+  }
+  .reset:hover {
+	background: #CC0000;
+  }
+  .lighter {
+	background: #CC0000
+  }

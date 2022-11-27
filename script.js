@@ -32,26 +32,17 @@ let lapCount = 0;
 //Using my creativity here. Play/pause button
 const playpause = document.querySelector('.playpause');
 
-var numofclicks = 0;
-playpause.addEventListener('click', () => {
-    numofclicks ++;
-  playpause.classList.toggle('playing');
-  clearInterval(Interval);
-  Interval = setInterval(startTimer,10);
-  if (numofclicks%2){ //for every 2 clicks pause button is enabled. You can never double click play or pause, it will always toggle.
-    console.log("Pause button activated");
-  } else {
-    clearInterval(Interval);
-  }
-});
-
 //Play/Pause button
 function change() {
     var x = document.getElementById("test");
     if (x.innerHTML === "Play") {
       x.innerHTML = "Pause";
+      playpause.classList.toggle('playing');
+      clearInterval(Interval);
+      Interval = setInterval(startTimer,10);
     } else {
       x.innerHTML = "Play";
+      clearInterval(Interval);
     }
   }
 
@@ -165,18 +156,32 @@ function loadLapHistory() {
         Lap ${lapitem}</div>`);
 }
 
-//toggle dark mode 
+//toggle Light/Dark mode with localstorage to remember the theme for next time
+const switchTheme = (evt) => {
+	const switchBtn = evt.target;
+	if (switchBtn.textContent.toLowerCase() === "light") {
+		switchBtn.textContent = "dark";
+		localStorage.setItem("theme", "dark");
+		document.documentElement.setAttribute("data-theme", "dark");
+	} else {
+		switchBtn.textContent = "light";
+		localStorage.setItem("theme", "light"); 
+		document.documentElement.setAttribute("data-theme", "light");
+	}
+};
 
-function darkmode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-    var contrast = document.querySelector(".darkmodebtn");
-    if (contrast.innerHTML === "Toggle dark mode") {
-        contrast.innerHTML = "Toggle light mode";
-      } else {
-        contrast.innerHTML = "Toggle dark mode";
-      }
- }
+const switchModeBtn = document.querySelector(".switch-btn");
+switchModeBtn.addEventListener("click", switchTheme, false);
+
+let currentTheme = "light";
+currentTheme = localStorage.getItem("theme")
+	? localStorage.getItem("theme")
+	: null;
+
+if (currentTheme) {
+	document.documentElement.setAttribute("data-theme", currentTheme);
+	switchModeBtn.textContent = currentTheme;
+}
 
 //clock
 

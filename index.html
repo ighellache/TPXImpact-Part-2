@@ -6,16 +6,17 @@
     <title>My Stopwatch</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   
-    <h1>Stopwatch</h1>
-    <button class="darkmodebtn" onclick="darkmode()">Toggle dark mode</button>
-    <div id="clockContainer">
-        <div id="hour"></div>
-        <div id="minute"></div>
-        <div id="second"></div>
+<center><body>
+    <div class="page-header"> My StopWatch</div>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
     </div>
-    <div class="digits">
+    <div class="switch-cont">
+        <button class="switch-btn"> Light </button>
+    </div>
+    <div class="digits" id="mytheme">
         <p><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>:<span id="centiseconds">00</span></p>
     </div>
    <!-- play/pause button -->
@@ -23,30 +24,30 @@
     <button id="button-reset">Reset</button> <!-- Reset laps -->
     <!-- adding laps -->
     <button id="button-lap">Lap</button>
-    <button id="button-clearlap">Clear Lap History</button>
-            
-            <!-- <button id="button-loadlaphistory" onclick="loadLapHistory()">Load Lap History</button> -->
-            </div> 
-    </div>
-
-        <h1>Laps:</h1>
+    <button id="button-clearlap">Clear Lap History</button>      
         <div id="laps">
+            <h1>Laps</h1>
             <p id="lapRecord"></p>
         </div>
-        <br><br><br>
-        
-</body>
+</body></center>
 <script src="script.js"></script>
 </html>
 
 
 <!-- adding testing -->
-
-<!-- add playpause button -->
-<!-- add clock -->
-
-
 <!-- add sound? -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Improvements/Reflections: When pressing reset instead of starting again from Lap 1 could continue -->
 
     
     
