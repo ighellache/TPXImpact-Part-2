@@ -144,7 +144,7 @@ body {
 	font-family: monospace;
 	text-transform: uppercase;
 	outline: none;
-	padding: 0.5rem 1rem;
+	
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
 	border: 1px solid var(--main-text-color);
@@ -153,6 +153,18 @@ body {
 	transition: all ease 0.3s;
 }
 
+button {
+	font-family: monospace;
+	text-transform: uppercase;
+	outline: none;
+	padding: 0.5rem 0.5rem;
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+	border: 1px solid var(--main-text-color);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all ease 0.3s;
+}
 #timerContainer {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;

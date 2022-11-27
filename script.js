@@ -34,13 +34,13 @@ const playpause = document.querySelector('.playpause');
 
 //Play/Pause button
 function change() {
-    var x = document.getElementById("test");
+    var x = document.getElementById("playpausebtn");
     if (x.innerHTML === "Play") {
       x.innerHTML = "Pause";
       playpause.classList.toggle('playing');
       clearInterval(Interval);
       Interval = setInterval(startTimer,10);
-      startClock();
+      setTimeout(startClock, 40); //to ensure clock runs same rate as timer
     } else {
       x.innerHTML = "Play";
       clearInterval(Interval);
@@ -227,7 +227,6 @@ function resetClock(){
   difference = 0;
   paused = 0;
   running = 0;
-  //the reset in your function would reset everything
 }
 function getShowTime(){
   updatedTime = new Date().getTime();
@@ -242,6 +241,7 @@ function getShowTime(){
   var seconds = Math.floor((difference % (1000 * 60)) / 1000);
   var cseconds = Math.floor((difference % (1000 * 60)) / 10);
 
+ 
 	const deg = 6;
 	const hour = document.querySelector(".hour");
 	const min = document.querySelector(".min");
