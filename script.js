@@ -1,5 +1,6 @@
 //Initialize variables outside functions to be used globally
-//Integer variables, let allows the variable to change
+//Could use var instead for global scope but from my learning const is used when a variable isn't physically changed 
+//and let is used when the variable can be changed.
 
 const buttonReset = document.getElementById('button-reset');
 const buttonLap = document.getElementById('button-lap');
@@ -33,12 +34,12 @@ function change() {
   }
 
 // function hideshow() {
-//   var analog = document.getElementById("analog");
-//   if (analog.style.display === "none") {
-//     analog.style.display = "block";
-//   } else {
+//   var analog = document.querySelector("clock");
+//   if (analog.style.display === "block") {
 //     analog.style.display = "none";
-//   }
+//   } else {
+//     analog.style.display = "block";
+//   }}
 // } causes the hands to move
 
 buttonReset.onclick = function() {
@@ -49,7 +50,7 @@ buttonReset.onclick = function() {
 function lap()  { 
     lapCount ++;
     //anything inside the template literal/placeholder is treated as Javascript
-    //I used ternary operators to maintain consistent alignment of laptimes so all lap counts are displayed to two digits
+    //I used a ternary operator (acts like a conditional statement) maintain consistent alignment of laptimes so all lap counts are displayed to two digits
     lapNow = `<div class="laptime" >Lap ${lapCount <= 9 ? "0" + lapCount: lapCount}: ${hours}:${minutes}:${seconds}:${cseconds}</div>`;
     laps.innerHTML += lapNow;
     //console.log(laps);
@@ -93,9 +94,10 @@ function loadLapHistory() { //using executeprogram knowledge
 const switchTheme = (evt) => {
 	const switchBtn = evt.target;
 	if (switchBtn.textContent.toLowerCase() === "light") {
+    document.documentElement.setAttribute("data-theme", "dark");
 		switchBtn.textContent = "dark"; //try to make this asynchronous cos you have to press twice
 		localStorage.setItem("theme", "dark");
-		document.documentElement.setAttribute("data-theme", "dark");
+		
 	} else {
 		switchBtn.textContent = "light";
 		localStorage.setItem("theme", "light"); 
@@ -146,13 +148,12 @@ function displayTime(time) {
   window.minutes = Math.floor(time / 60000) % 60;
   window.hours = Math.floor(time / 3600000) % 60;
   
-  cseconds = cseconds < 10 ? "0" + cseconds : cseconds;
+  cseconds = cseconds < 10 ? "0" + cseconds : cseconds; //ternary operators used to maintain 00:00:00:00 structure
   seconds = seconds < 10 ? "0" + seconds : seconds;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   hours = hours < 10 ? "0" + hours : hours;
 
-  timerDisplay.innerHTML =
-    hours + ":" + minutes + ":" + seconds + ":" + cseconds;
+  timerDisplay.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + cseconds;
 
 	const deg = 6;
 	const hour = document.querySelector(".hour");
