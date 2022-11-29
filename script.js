@@ -159,7 +159,6 @@ function displayTime(time) {
 	const min = document.querySelector(".min");
 	const sec = document.querySelector(".sec");
 
-	let day = new Date();
 	let hh = hours * 30;
 	let mm = minutes * deg;
 	let ss = seconds * deg;
