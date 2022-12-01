@@ -40,13 +40,14 @@ function change() {
 //   } else {
 //     analog.style.display = "block";
 //   }}
-// } causes the hands to move
+// } causes the clock hands to move
 
 buttonReset.onclick = function() {
   reset();
 }
 
 //wanted to provide an alternative way of adding functionality to a button
+//This function displays the lap times when lap button is clicked and adds laps to local storage 
 function lap()  { 
     lapCount ++;
     //anything inside the template literal/placeholder is treated as Javascript

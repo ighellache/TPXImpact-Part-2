@@ -56,6 +56,10 @@ body {
 	transition: all ease 0.2s;
 }
 
+.laptime {
+	text-align: right;
+}
+
 .lapsheading {
 	font-family: monospace;
 	text-transform: uppercase;
