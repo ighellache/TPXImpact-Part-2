@@ -1,6 +1,10 @@
 # Option 1: Frontend challenge
 
 Creating a functional stopwatch. 
+
+## Please find my link to the project:
+https://ighellache.github.io/TPXImpact-Part-2/
+
 ## Must have the following features:
 - [x] Time display: The current elapsed time in the following format 00:00:00:00 (hours, minutes, seconds, centiseconds) 
 - [x] Start button: A button to start or continue a timer.
