@@ -1,6 +1,13 @@
 # Option 1: Frontend challenge
 
-Creating a functional stopwatch. 
+Creating a functional stopwatch.
+
+## Key features
+- My stopwatch includes both an analog clock and a digit-version to display the stopwatch. 
+- Display light and dark mode options for accessibility.
+- Play/pause in one button
+- Lap times stored using local storage.
+- Light and dark mode setting saved to local storage so settings are saved on page refresh.
 
 ## Please find my link to the project:
 https://ighellache.github.io/TPXImpact-Part-2/
